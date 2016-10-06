@@ -28,7 +28,7 @@
             <h2>Participez au concours des plus belles chaussettes !</h2>
         </div>
         <div class="col-xs-offset-4 col-xs-4">
-            <form method="post" action="../src/recording.php">
+            <form method="post" action="../src/recording.php" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="Input">Votre Nom</label>
                     <input type="text" class="form-input-text" name="last_name">
@@ -39,13 +39,16 @@
                 </div>
                 <div class="form-group">
                     <label for="Input">Vos chaussettes !</label>
-                    <input type="file"  accept="image/*" class="form-input-text" name="picture" capture="camera">
+                    <input type="file"  accept="image/*"  name="picture" id="picture" capture="camera">
                 </div>
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Valider</button>
                 </div>
             </form>
+            <?php if (isset($_GET['error'])) {
+                if ($_GET['error'] = 1){ echo "Il y a eu une erreur, réessayer."; }
+            } ?>
         </div>
     </div>
 </div>
