@@ -18,7 +18,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
@@ -34,7 +34,7 @@
                     <input type="text" class="form-input-text" name="last_name">
                 </div>
                 <div class="form-group">
-                    <label for="Input">Votre Prènom</label>
+                    <label for="Input">Votre Prénom</label>
                     <input type="text" class="form-input-text" name="name">
                 </div>
                 <div class="form-group">
