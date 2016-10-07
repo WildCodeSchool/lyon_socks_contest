@@ -15,7 +15,19 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+    <script type="text/javascript">
+        function chkcontrol(j) {
+            var total=0;
+            for(var i=0; i < document.form1.ckb.length; i++){
+                if(document.form1.ckb[i].checked){
+                    total =total +1;}
+                if(total > 3){
+                    alert("Please Select only three")
+                    document.form1.ckb[i].checked = false ;
+                    return false;
+                }
+            }
+        } </script>
     <link rel="stylesheet" href="../public/css/style.css">
 
 </head>
@@ -29,7 +41,7 @@
 
 
             <div class="row imgsockss">
-            <form method="post" action="../src/control-vote.php">
+            <form method="post" name="form1" action="addvote.php">
 
 <?php
 $id = $_GET['id'];
@@ -40,9 +52,9 @@ require_once "bdd.php";
                 while ($row = $query->fetch_assoc()) {
 
                    // echo "<div class='col-lg-3 col-md-4 col-xs-6 imgsocks'><a class='thumbnail'><img class='img-responsive' src=\"".( $row['picture_url'])."\"/></a></div>";
-                    echo "<div class='col-lg-3 col-md-4 col-xs-6 imgsocks' style='background-image:url(\"".( $row['picture_url'])."\")'></div>";
+                    echo "<div class='col-lg-3 col-md-4 col-xs-6 imgsocks' style='background-image:url(\"".( $row['picture_url'])."\")'><input type=checkbox name=ckb value=" .$row['id']. " onclick='chkcontrol(" .$row['id']. ")'></div>";
                 }
-?>
+?>              <input type="submit" value="Valider mes votes">
             </form>
             </div>
         </div>
