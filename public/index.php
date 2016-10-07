@@ -24,17 +24,16 @@
     <link rel="stylesheet" href="css/style.css">
 
 </head>
-<body>
+<body class="index">
 <div class="container-fluid">
-    <div class="row" >
+    <div class="row home" >
         <div class="col-xs-offset-3 col-xs-6">
-            <img src="img/socks-icon.png" alt="sock icon" id="sock-icon"/>
-            <h2>Participez au concours des plus belles chaussettes!</h2>
+            <h2><strong>Participez au concours des plus belles chaussettes!</strong></h2>
         </div>
         <div class="col-xs-offset-4 col-xs-4">
             <form method="post" action="../src/recording.php" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="Input">Votre Nom</label>
+                    <label for="Input">Votre Nom</label> <br/>
                     <input type="text" class="form-input-text" name="last_name">
                 </div>
                 <div class="form-group">
