@@ -3,7 +3,6 @@
 body {
     font-family: 'Exo', sans-serif ;
     text-align: center;
-    margin-top: 5%;
 }
 
 #sock-icon {
@@ -30,4 +29,24 @@ label {
 
 .btn-primary {
     background-image: linear-gradient(to bottom,#539a93 0,#627573 100%);
+}
+
+.back-image {
+    background: url('../img/login-photo.jpg') 100%;
+}
+
+#login-form {
+    width: 50%;
+    min-width: 300px;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: inline-block;
+    margin-top: 5%;
+
+}
+
+#logo-wcs-deer {
+    width: 70%;
+    height: 70%;
+    min-height: 100px;
+    min-width: 100px;
 }
