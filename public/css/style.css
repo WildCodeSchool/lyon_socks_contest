@@ -8,6 +8,8 @@ body {
 #sock-icon {
     width: 20%;
     height: 20%;
+    min-width: 150px;
+    min-height: 150px;
 }
 
 .form-group {
@@ -41,7 +43,7 @@ label {
     background-color: rgba(255, 255, 255, 0.5);
     display: inline-block;
     margin-top: 5%;
-
+    border-radius: 30px;
 }
 
 #logo-wcs-deer {
