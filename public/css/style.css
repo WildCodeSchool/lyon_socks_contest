@@ -1,0 +1,33 @@
+@import 'https://fonts.googleapis.com/css?family=Exo:300,300i,400,500,500i,700,700i,800,900';
+
+body {
+    font-family: 'Exo', sans-serif ;
+    text-align: center;
+    margin-top: 5%;
+}
+
+#sock-icon {
+    width: 20%;
+    height: 20%;
+}
+
+.form-group {
+    margin-top: 10%;
+
+}
+
+label {
+    margin-right: 5%;
+}
+
+#sock-upload {
+    font-size: 1.5em;
+}
+
+#upload {
+    display: inline-block;
+}
+
+.btn-primary {
+    background-image: linear-gradient(to bottom,#539a93 0,#627573 100%);
+}
