@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>WCS Chaussettes</title>
+    <title>Election des meilleures chaussettes</title>
 
     <!--  JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -21,9 +21,9 @@
     <link rel="stylesheet" href="css/style.css">
 
 </head>
-<body>
+<body class="back-image">
     <div class="container-fluid">
-        <div class="row">
+        <div class="row" id="login-form">
             <div class="col-xs-offset-3 col-xs-6">
                 <h2>Votez pour les plus belles chaussettes!</h2>
             </div>
@@ -41,12 +41,13 @@
                         <button type="submit" class="btn btn-primary">Valider</button>
                     </div>
                 </form>
+                <img src="img/wcs-logo2-deer.png" alt="Wild Code School deer logo" id="logo-wcs-deer">
                 <div>
                     <?php
                         if(isset($_GET['error'])) {
                             switch ($_GET['error']) {
                                 case 1:
-                                    echo "Vous n'êtes pas enregistrés. Allez vite vous faire photographier vos superbes chaussettes auprès des wilders!";
+                                    echo "Vous n'êtes pas enregistrés. Allez vite faire photographier vos superbes chaussettes auprès des wilders!";
                                     break;
                                 case 2:
                                     echo "Vous avez oublié de remplir un champ. Recommencez!";

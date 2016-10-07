@@ -23,9 +23,10 @@
 </head>
 <body>
 <div class="container-fluid">
-    <div class="row">
+    <div class="row" >
         <div class="col-xs-offset-3 col-xs-6">
-            <h2>Participez au concours des plus belles chaussettes !</h2>
+            <img src="img/socks-icon.png" alt="sock icon" id="sock-icon"/>
+            <h2>Participez au concours des plus belles chaussettes!</h2>
         </div>
         <div class="col-xs-offset-4 col-xs-4">
             <form method="post" action="../src/recording.php" enctype="multipart/form-data">
@@ -38,8 +39,10 @@
                     <input type="text" class="form-input-text" name="name">
                 </div>
                 <div class="form-group">
-                    <label for="Input">Vos chaussettes !</label>
-                    <input type="file"  accept="image/*"  name="picture" id="picture" capture="camera">
+
+                    <label for="Input" id="sock-upload">Envoyer la photo de vos chaussettes</label>
+                    <input type="file"  accept="image/*" class="form-input-text" name="picture" capture="camera" id="upload">
+
                 </div>
 
                 <div class="form-group">

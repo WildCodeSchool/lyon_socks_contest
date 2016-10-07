@@ -1,5 +1,4 @@
 <?php
-var_dump($_POST);
 
 require_once 'bdd.php';
 $id = $_GET['id'];
@@ -17,6 +16,6 @@ elseif ($voteNumber >= 4) {
     }
     $likes =(substr($in, 0, -1));
     $likes .= ")";
-var_dump($likes);
-    $sql = "updte  in " . $in;
+
+    $sql = "update socketparty set likes = likes+1 where id in ' .$likes. '";
 
