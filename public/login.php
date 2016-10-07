@@ -6,6 +6,9 @@
     <meta charset="utf-8">
     <title>Election des meilleures chaussettes</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     <!--  JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
@@ -45,12 +48,15 @@
                 <div>
                     <?php
                         if(isset($_GET['error'])) {
-                            switch ($error) {
+                            switch ($_GET['error']) {
                                 case 1:
                                     echo "Vous n'êtes pas enregistrés. Allez vite faire photographier vos superbes chaussettes auprès des wilders!";
                                     break;
                                 case 2:
                                     echo "Vous avez oublié de remplir un champ. Recommencez!";
+                                    break;
+                                case 3:
+                                    echo "Désolé , vous avez déja voté ! ";
                                     break;
                             }
                         }
