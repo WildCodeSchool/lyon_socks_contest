@@ -44,12 +44,14 @@
                 <div>
                     <?php
                         if(isset($_GET['error'])) {
-                            switch ($error) {
+                            switch ($_GET['error']) {
                                 case 1:
                                     echo "Vous n'êtes pas enregistrés. Allez vite vous faire photographier vos superbes chaussettes auprès des wilders!";
                                     break;
                                 case 2:
                                     echo "Vous avez oublié de remplir un champ. Recommencez!";
+                                    break;
+                                case 3: "Désolé , vous avez déja voté ! ";
                                     break;
                             }
                         }

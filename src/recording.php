@@ -14,7 +14,7 @@ $url = "imgsocks/" .$name_picture;
 
 $resultat =  move_uploaded_file($_FILES['picture']['tmp_name'],$url);
 
-$sql ="INSERT INTO guests (firt_name, lastname, picture_url) VALUES ('$name', '$last_name', '$url')";
+$sql ="INSERT INTO guests (first_name, last_name, picture_url) VALUES ('$name', '$last_name', '$url')";
 $exec = executeSql(getConnection(),$sql);
 
 
