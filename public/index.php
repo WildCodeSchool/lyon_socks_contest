@@ -6,6 +6,9 @@
     <meta charset="utf-8">
     <title>WCS Chaussettes</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+
     <!--  JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 

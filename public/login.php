@@ -6,6 +6,9 @@
     <meta charset="utf-8">
     <title>Election des meilleures chaussettes</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     <!--  JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
@@ -52,7 +55,8 @@
                                 case 2:
                                     echo "Vous avez oublié de remplir un champ. Recommencez!";
                                     break;
-                                case 3: "Désolé , vous avez déja voté ! ";
+                                case 3:
+                                    echo "Désolé , vous avez déja voté ! ";
                                     break;
                             }
                         }
