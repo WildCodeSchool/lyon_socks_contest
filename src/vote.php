@@ -64,22 +64,21 @@ $id = $_GET['id'];
 
             </h4>
         </div>
-    </div>
 
 
             <div class="row imgsockss">
             <form method="post" name="form1" action="addvote.php?id=<?php echo $id; ?>">
 
 <?php
-require_once "bdd.php";
+    require_once "bdd.php";
 
-                $sql= "select * from guests where id != $id ";
-                $query = executeSql(getConnection(),$sql);
-                while ($row = $query->fetch_assoc()) {
+                    $sql= "select * from guests where id != $id ";
+                    $query = executeSql(getConnection(),$sql);
+                    while ($row = $query->fetch_assoc()) {
 
-                   // echo "<div class='col-lg-3 col-md-4 col-xs-6 imgsocks'><a class='thumbnail'><img class='img-responsive' src=\"".( $row['picture_url'])."\"/></a></div>";
-                    echo "<div class='col-lg-3 col-md-4 col-xs-6 imgsocks' style='background-image:url(\"".( $row['picture_url'])."\")'><input type='checkbox' class='ckb' name=" .$row['id']. " value=" .$row['id']. " onclick='chkcontrol(" .$row['id']. ")'></div>";
-                }
+                       // echo "<div class='col-lg-3 col-md-4 col-xs-6 imgsocks'><a class='thumbnail'><img class='img-responsive' src=\"".( $row['picture_url'])."\"/></a></div>";
+                        echo "<div class='col-lg-3 col-md-4 col-xs-6 imgsocks' style='background-image:url(\"".( $row['picture_url'])."\")'><input type='checkbox' class='ckb' name=" .$row['id']. " value=" .$row['id']. " onclick='chkcontrol(" .$row['id']. ")'></div>";
+                    }
 ?>              <input type="submit" value="Valider mes votes">
             </form>
             </div>
