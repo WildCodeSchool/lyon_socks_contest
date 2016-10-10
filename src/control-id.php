@@ -2,8 +2,8 @@
 
 require_once "bdd.php";
 
-$last_name = $_POST['last_name'];
-$name = $_POST['name'];
+$last_name = htmlspecialchars(trim(strtolower($_POST['last_name'])));
+$name = htmlspecialchars(trim(strtolower($_POST['name'])));
 
 $sql = "SELECT * FROM guests";
 

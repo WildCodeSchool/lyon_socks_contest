@@ -4,8 +4,8 @@ require_once 'bdd.php';
 
 $extension_upload = explode("/",$_FILES['picture']['type']);
 $extension =  $extension_upload[1];
-$last_name  = trim(strtolower($_POST["last_name"]));
-$name      = trim(strtolower($_POST["name"]));
+$last_name = htmlspecialchars(trim(strtolower($_POST["last_name"])));
+$name      = htmlspecialchars(trim(strtolower($_POST["name"])));
 
 
 $name_picture = $name.$last_name. "." .$extension;
