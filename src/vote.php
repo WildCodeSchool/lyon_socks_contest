@@ -1,4 +1,7 @@
 <?php
+
+
+// LAZY LOADING
 $id = $_GET['id'];
 ?>
 <!DOCTYPE html>

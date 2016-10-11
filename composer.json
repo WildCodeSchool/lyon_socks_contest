@@ -1,10 +1,12 @@
 {
     "name": "root/lyon_hack_102016_wafa_aymen",
+    "require": {
+        "gregwar/image": "^2.0"
+    },
     "authors": [
         {
             "name": "AymenMech",
             "email": "aymen.mechiche@gmail.com"
         }
-    ],
-    "require": {}
+    ]
 }

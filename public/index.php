@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <title>WCS Chaussettes</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
     <!--  JQUERY -->
