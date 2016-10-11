@@ -34,4 +34,4 @@
     </html>
 
     <?php
-    header('Refresh: 3; ../public/login.php');
+    header('Refresh: 2; ../public/login.php');

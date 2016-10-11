@@ -18,28 +18,48 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/guests.css">
 </head>
 
 <body>
-    <h1>Les plus belles chaussettes de la soirée!</h1>
+<div class="container-fluid">
+    <div class="row">
+         <h1>Les plus belles chaussettes de la soirée!</h1>
+        <div class="col-xs-offset-1 col-xs-3">
+            <p>Nombre de participants :
+                <?php
+                require_once '../src/bdd.php';
+                $sql ="SELECT COUNT(*) as nb_player FROM guests";
+                $req = executeSql(getConnection(),$sql);
+                $data = $req->fetch_assoc();
+                echo $data['nb_player'];
+                              ?>
+        </div>
+
+        <div class="col-xs-offset-2 col-xs-4">
+            <p>Nombre de votants :
+                <?php
+                require_once '../src/bdd.php';
+                $sql ="SELECT COUNT(vote)as nb_vote FROM guests WHERE vote = 1";
+                $req = executeSql(getConnection(),$sql);
+                $data = $req->fetch_assoc();
+                echo $data['nb_vote'];
+                ?>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+
     <?php
     require_once '../src/bdd.php';
     $sql = "select * from guests order by likes DESC limit 3";
     $req = executeSql(getConnection(),$sql);
     while ($row = $req->fetch_assoc()) {
-        echo "<div class='winner'>" .$row['last_name']. "</div><div class='winner'>" .$row['first_name']. "</div><div class='winner'><img src=\"../src/" .$row['picture_url']. "\"/></div>" ;
+        echo "<div class='col-xs-offset-1 col-xs-2'>" .$row['last_name']. "</br>" .$row['first_name']. "</br><img class='winner' src=\"../src/" .$row['picture_url']. "\"/></div>" ;
     }
     ?>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-6 col-md-4">
-
-            </div>
-        </div>
-
     </div>
-
+    </div>
 
 </body>
 
