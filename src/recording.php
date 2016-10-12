@@ -10,28 +10,25 @@ if ( (isset($_POST["last_name"])) && (isset($_POST['name'])) && (isset($_FILES['
     $name = htmlspecialchars(trim(strtolower($_POST["name"])));
 
 
-    if ( (empty($last_name) === true) || (empty($name) === true)){
-        $name_picture = md5($name.$last_name). "." . $extension;
-        $url = "imgsocks/" .$name_picture;
-        $treatment = Image::open($_FILES['picture']['tmp_name'])
+    if ((empty($last_name) === false) || (empty($name) === false)) {
+        $name_picture = md5($name.$last_name) . "." . $extension;
+        $url = "imgsocks/" . $name_picture;
+        Image::open($_FILES['picture']['tmp_name'])
             ->cropResize(500, 500)
             ->save($url);
 
-        if ($treatment == true){
-            $sql ="INSERT INTO guests (first_name, last_name, picture_url) VALUES ('$name', '$last_name', '$url')";
-            $exec = executeSql(getConnection(),$sql);
-            header("Location:redirection.php");
-        }
-        else {
-            header("Location:../public/index.php?error=1");
-        }
-    }   else {
-        header("Location:../public/index.php?error=1");
-    }
+        $sql = "INSERT INTO guests (first_name, last_name, picture_url) VALUES ('$name', '$last_name', '$url')";
+        $exec = executeSql(getConnection(), $sql);
+        header("Location:redirection.php");
 
-} else {
-    header("Location:../public/index.php?error=1");
+    } else {
+        header("Location:../public/index.php?error=13");
+    }
 }
+      else {
+        header("Location:../public/index.php?error=12");
+      }
+
 
 
 

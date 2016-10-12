@@ -4,12 +4,6 @@ require_once 'bdd.php';
 $id = $_GET['id'];
 $voteNumber = count($_POST);
 
-if ( $voteNumber <= 2){
-    header("Location:vote.php?id=" .$id. "&error=1");
-}
-elseif ($voteNumber >= 4) {
-    header("Location:vote.php?id=" .$id. "&error=2");
-}else {
     $in = "(";
     foreach ($_POST as $value => $voteFor) {
         $in .= $voteFor . ",";
@@ -23,4 +17,3 @@ elseif ($voteNumber >= 4) {
     $request->close;
     $request1 = executeSql(getConnection(), $sql1);
     header('Location:redirect.php');
-}

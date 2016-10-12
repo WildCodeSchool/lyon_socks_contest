@@ -22,16 +22,7 @@ body{
     min-width: 400px;
     max-width: 800px;
 
-
 }
-.imgsocks {
-
-    margin-bottom: 30px;
-    height: 230px;
-    background-repeat: round;
-
-}
-
 body {
     font-family: 'Exo', sans-serif ;
     text-align: center;
@@ -88,3 +79,4 @@ label {
     width: 150px;
     display: inline-block;
 }
+

@@ -1,0 +1,43 @@
+/* Vote page */
+
+.border-over {
+    border: 5px dashed orange;
+}
+
+.border-fixe {
+    border: 5px solid orange;
+}
+
+.padding2 {
+    padding: 5px;
+}
+
+body {
+    background-color: #627573;
+    color: white;
+    }
+
+.vote_top{
+    background-color: #627573;
+    border-bottom: 2px solid black;
+    position: fixed;
+    top: auto;
+    z-index: 1;
+
+}
+
+.imgsocks {
+    margin: 50px 0 50px 0;
+    margin-top: 200px;
+
+    height: 230px;
+}
+.lazy {
+    width: 100%;
+    height: auto;
+}
+
+#go-vote{
+    margin: 50px 200px;
+    font-size: x-large;
+}
