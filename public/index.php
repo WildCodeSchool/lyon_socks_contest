@@ -41,6 +41,10 @@
                     <input type="text" class="form-input-text" name="name">
                 </div>
                 <div class="form-group">
+                    <label for="Input">Compte twitter</label>
+                    <input type="text" class="form-input-text" name="twitter">
+                </div>
+                <div class="form-group">
 
                     <label for="Input" id="sock-upload">Envoyer la photo de vos chaussettes</label>
                     <input type="file"  accept="image/*" class="form-input-text" name="picture" capture="camera" id="upload">

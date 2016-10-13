@@ -8,6 +8,7 @@ if ( (isset($_POST["last_name"])) && (isset($_POST['name'])) && (isset($_FILES['
     $extension = $extension_upload[1];
     $last_name = htmlspecialchars(trim(strtolower($_POST["last_name"])));
     $name = htmlspecialchars(trim(strtolower($_POST["name"])));
+    $twitter = htmlspecialchars(trim(strtolower($_POST["twitter"])));
 
 
     if ((empty($last_name) === false) || (empty($name) === false)) {
@@ -17,7 +18,7 @@ if ( (isset($_POST["last_name"])) && (isset($_POST['name'])) && (isset($_FILES['
             ->cropResize(500, 500)
             ->save($url);
 
-        $sql = "INSERT INTO guests (first_name, last_name, picture_url) VALUES ('$name', '$last_name', '$url')";
+        $sql = "INSERT INTO guests (first_name, last_name, picture_url, twitter) VALUES ('$name', '$last_name', '$url', '$twitter')";
         $exec = executeSql(getConnection(), $sql);
         header("Location:redirection.php");
 

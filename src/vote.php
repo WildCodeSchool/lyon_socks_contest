@@ -35,16 +35,23 @@ $id = $_GET['id'];
                 <h3>Vous avez votez pour <strong id="vote-number">0</strong> paires.</h3>
             </div>
             <div class="col-xs-3">
+                <meta name="twitter:card" content="photo" />
+                <meta name="twitter:site" content="@Aymenmech" />
+                <meta name="twitter:title" content="Small Island Developing States Photo Submission" />
+                <meta name="twitter:description" content="View the album on Flickr." />
+                <meta name="twitter:image" content="../src/imgsocks/cecileangays.jpeg" />
+
+
                 <form method="post" action="addvote.php?id=<?php echo $id; ?>">
-                <input type="hidden" name="vote1" id="vote1" value="">
-                <input type="hidden" name="vote2" id="vote2" value="">
-                <input type="hidden" name="vote3" id="vote3" value="">
-                <input type="submit" class="btn btn-primary" id="go-vote" value="Voter"></input>
+                    <input type="hidden" name="vote1" id="vote1" value="">
+                    <input type="hidden" name="vote2" id="vote2" value="">
+                    <input type="hidden" name="vote3" id="vote3" value="">
+                    <input type="submit" class="btn btn-primary" id="go-vote" value="Voter">
+                </form>
             </div>
         </div>
     </div>
 </div>
-
 
 
 <div class="container-fluid">
@@ -57,12 +64,13 @@ $id = $_GET['id'];
                     $query = executeSql(getConnection(),$sql);
                     while ($row = $query->fetch_assoc()) {
 
-                        echo "<div class='col-xs-offset-1 col-xs-2 imgsocks'><img alt=\"" .$row['id']. "\" class=\"lazy media-object padding2\" data-original=\"" .$row['picture_url']. "\"></div>";
+                        echo "<div class='col-xs-offset-1 col-xs-10 col-md-offset-1 col-md-2 imgsocks'><img alt=\"" .$row['id']. "\" class=\"lazy media-object padding2\" data-original=\"" .$row['picture_url']. "\"><a href=\"https://twitter.com/intent/tweet?button_hashtag=LyonIsWild\" class=\"twitter-hashtag-button\" data-show-count=\"false\">Tweet #LyonIsWild</a></div>";
                     } ?>
-            </form>
+
 
     </div>
 </div>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 <script>
     $(function() {
         $("img.lazy").lazyload({

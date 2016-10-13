@@ -40,6 +40,7 @@
                         <label for="Input">Votre Prénom</label>
                         <input type="text" class="form-input-text" name="name">
                     </div>
+
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Valider</button>
                     </div>
