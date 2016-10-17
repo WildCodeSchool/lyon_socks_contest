@@ -57,6 +57,7 @@
     while ($row = $req->fetch_assoc()) {
         echo "<div class='col-xs-offset-1 col-xs-3'>" .$row['last_name']. "</br>" .$row['first_name']. "</br>" .$row['likes']. "</br><img class='winner' src=\"../src/" .$row['picture_url']. "\"/></div>" ;
     }
+
     ?>
     </div>
     </div>

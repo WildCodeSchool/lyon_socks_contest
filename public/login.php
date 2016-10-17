@@ -1,4 +1,8 @@
 <?php
+
+if (session_status() === 2){
+    session_destroy();
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -59,8 +63,12 @@
                                 case 3:
                                     echo "Désolé , vous avez déja voté ! ";
                                     break;
+                                case 4:
+                                    echo "Il faut se connecter pour voter !";
+                                    break;
                             }
                         }
+
                     ?>
                 </div>
             </div>

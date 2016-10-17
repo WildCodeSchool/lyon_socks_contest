@@ -34,4 +34,7 @@
     </html>
 
     <?php
+    if (session_status() === PHP_SESSION_ACTIVE){
+        session_destroy();
+    }
     header('Refresh: 2; ../public/login.php');

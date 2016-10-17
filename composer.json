@@ -1,7 +1,8 @@
 {
     "name": "root/lyon_hack_102016_wafa_aymen",
     "require": {
-        "gregwar/image": "^2.0"
+        "gregwar/image": "^2.0",
+        "abraham/twitteroauth":  "^0.6.6"
     },
     "authors": [
         {

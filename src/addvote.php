@@ -1,7 +1,7 @@
 <?php
-
+session_start();
 require_once 'bdd.php';
-$id = $_GET['id'];
+$id = $_SESSION['id'];
 $voteNumber = count($_POST);
 
     $in = "(";
@@ -16,4 +16,7 @@ $voteNumber = count($_POST);
     $request = executeSql(getConnection(), $sql);
     $request->close;
     $request1 = executeSql(getConnection(), $sql1);
+
+    session_destroy();
+
     header('Location:redirect.php');

@@ -62,4 +62,8 @@ $(function() {
             $("#go-vote").prop("disabled", true);
         }
     }
+
+    $(".twitter-hashtag-button").click(function() {
+        $("#img-tweet").attr("value",  $(this).prev().attr("data-original"));
+    });
 });
