@@ -1,5 +1,30 @@
 /* Vote page */
+body {
+    color: #ffffff;
+    font-family: 'Exo', sans-serif;
+    background-color: #f1f1f1;
+}
+#choice-counter {
+    background-color: #35383a;
+}
 
+#choice-counter h2 {
+    font-size: 2.5em;
+}
+
+#choice-counter h3 {
+    font-size: 1.5em;
+}
+
+#choice-counter img {
+    width: 100px;
+    margin-top:10px;
+}
+
+#choice-counter p {
+    font-size: 1.5em;
+    text-align: center;
+}
 .border-over {
     border: 5px dashed orange;
 }
@@ -12,10 +37,7 @@
     padding: 5px;
 }
 
-body {
-    background-color: #627573;
-    color: white;
-    }
+
 
 .vote_top{
     background-color: #627573;
@@ -29,17 +51,27 @@ body {
 .imgsocks {
     margin: 50px 0 50px 0;
     margin-top: 200px;
-
     height: 230px;
+    text-align: center;
 }
 .lazy {
     width: 100%;
     height: auto;
 }
 
-#go-vote{
-    margin: 50px 200px;
-    font-size: x-large;
+#go-vote {
+    font-size: 2em;
+    display: block;
+    margin: 15px auto;
+    background-color: #FBA858;
+    color: #ffffff;
+    font-weight: 500;
+    width:140px;
+}
+
+#go-vote:hover {
+    font-weight: 700;
+    background-color: #FF7D00;
 }
 
 .bd-exemple {
@@ -60,4 +92,8 @@ body {
 .twitter-button:hover {
     cursor: pointer;
 
+}
+
+.modal-body{
+    text-align: center;
 }

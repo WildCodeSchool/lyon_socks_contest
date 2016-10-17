@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <title>WCS Chaussettes</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
 
 
     <!--  JQUERY -->
@@ -25,40 +25,34 @@
 
 </head>
 <body class="index">
-<div class="container-fluid">
-    <div class="row home" >
-        <div class="col-xs-offset-3 col-xs-6">
-            <h2><strong>Participez au concours des plus belles chaussettes!</strong></h2>
-        </div>
-        <div class="col-xs-offset-4 col-xs-4">
+<div class="container" id="contest-form">
+    <div class="row">
+        <img src="../public/img/wcs-logo1.png" alt="Logo de l'école de développement web Wild Code School" id="logo-wcs"/>
+        <h1><strong>Participez au concours des plus belles chaussettes!</strong></h1>
+    </div>
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1 home">
             <form method="post" action="../src/recording.php" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="Input">Votre Nom</label> <br/>
-                    <input type="text" class="form-input-text" name="last_name">
-                </div>
-                <div class="form-group">
-                    <label for="Input">Votre Prénom</label>
-                    <input type="text" class="form-input-text" name="name">
-                </div>
-                <div class="form-group">
-                    <label for="Input">Compte twitter</label>
-                    <input type="text" class="form-input-text" name="twitter">
-                </div>
-                <div class="form-group">
+                <input class="form-info" type="text" name="last_name" placeholder="Votre nom">
+                <input class="form-info" type="text" name="name" placeholder="Votre prénom">
+                <input class="form-info"  type="text" name="twitter" placeholder="Votre compte Twitter">
 
-                    <label for="Input" id="sock-upload">Envoyer la photo de vos chaussettes</label>
+                <div>
+                    <label for="Input" id="sock-upload">Envoyez la photo de vos chaussettes</label>
                     <input type="file"  accept="image/*" class="form-input-text" name="picture" capture="camera" id="upload">
-
                 </div>
-
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Valider</button>
+                <div>
+                    <button type="submit" class="btn" id="contest-form-valid">Valider</button>
                 </div>
             </form>
             <?php if (isset($_GET['error'])) {
-                if ($_GET['error'] = 1){ echo "Il y a eu une erreur, réessayer."; }
+                if ($_GET['error'] = 1){ echo "Il y a eu une erreur, réessayez."; }
             } ?>
         </div>
+    </div>
+
+    <div class="row" id="hashtags">
+        <p>#LyonIs<span>Wild</span></p>
     </div>
 </div>
 </body>

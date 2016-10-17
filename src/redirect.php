@@ -1,10 +1,13 @@
+<?php
+?>
     <!DOCTYPE html>
     <html>
     <head>
         <meta charset="utf-8">
-        <title>Election des meilleures chaussettes</title>
+        <title>WCS Chaussettes</title>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=0.7">
+
 
         <!--  JQUERY -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -18,23 +21,33 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="../public/css/style.css">
 
     </head>
-    <body class="back-image">
-        <div class="container-fluid">
-            <div class="row" id="login-form">
-                <div class="col-xs-offset-3 col-xs-6">
-                    <h2>Merci d'avoir participé !</h2>
-                </div>
-
+    <body class="index">
+    <div class="container" id="contest-form">
+        <div class="row">
+            <img src="../public/img/wcs-logo1.png" alt="Logo de l'école de développement web Wild Code School" id="logo-wcs"/>
+            <h1><strong>Merci d'avoir participé !</strong></h1>
+        </div>
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <a href="../public/login.php">
+                    <button class="btn" id="contest-form-valid-red">Se connecter</button>
+                </a>
             </div>
         </div>
-        </body>
+        <div class="row" id="hashtags">
+            <p>#LyonIs<span>Wild</span></p>
+        </div>
+    </div>
+    </body>
     </html>
 
-    <?php
-    if (session_status() === PHP_SESSION_ACTIVE){
-        session_destroy();
-    }
-    header('Refresh: 2; ../public/login.php');
+<?php
+if (session_status() === 2 ){
+    session_destroy();
+}
+header('Refresh:2;../public/login.php');
+
+

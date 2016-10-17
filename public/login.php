@@ -28,52 +28,48 @@ if (session_status() === 2){
     <link rel="stylesheet" href="css/style.css">
 
 </head>
-<body class="back-image">
-    <div class="container-fluid">
-        <div class="row" id="login-form">
-            <div class="col-xs-offset-3 col-xs-6">
-                <h2>Votez pour les plus belles chaussettes!</h2>
-            </div>
-            <div class="col-xs-offset-4 col-xs-4">
-                <form method="post" action="../src/control-id.php">
-                    <div class="form-group">
-                        <label for="Input">Votre Nom</label>
-                        <input type="text" class="form-input-text" name="last_name">
-                    </div>
-                    <div class="form-group">
-                        <label for="Input">Votre Prénom</label>
-                        <input type="text" class="form-input-text" name="name">
-                    </div>
 
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Valider</button>
-                    </div>
-                </form>
-                <img src="img/wcs-logo2-deer.png" alt="Wild Code School deer logo" id="logo-wcs-deer">
-                <div>
+<body class="index">
+<div class="container" id="contest-form">
+    <div class="row">
+        <img src="../public/img/wcs-logo1.png" alt="Logo de l'école de développement web Wild Code School" id="logo-wcs"/>
+        <h1><strong>Votez pour les plus belles chaussettes!</strong></h1>
+    </div>
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1 home">
+            <form method="post" action="../src/control-id.php">
+                <p class="error">
                     <?php
-                        if(isset($_GET['error'])) {
-                            switch ($_GET['error']) {
-                                case 1:
-                                    echo "Vous n'êtes pas enregistrés. Allez vite faire photographier vos superbes chaussettes auprès des wilders!";
-                                    break;
-                                case 2:
-                                    echo "Vous avez oublié de remplir un champ. Recommencez!";
-                                    break;
-                                case 3:
-                                    echo "Désolé , vous avez déja voté ! ";
-                                    break;
-                                case 4:
-                                    echo "Il faut se connecter pour voter !";
-                                    break;
-                            }
+                    if(isset($_GET['error'])) {
+                        switch ($_GET['error']) {
+                            case 1:
+                                echo "Vous n'êtes pas enregistrés. Allez vite faire photographier vos superbes chaussettes auprès des wilders!";
+                                break;
+                            case 2:
+                                echo "Vous avez oublié de remplir un champ. Recommencez!";
+                                break;
+                            case 3:
+                                echo "Désolé , vous avez déja voté ! ";
+                                break;
+                            case 4:
+                                echo "Il faut se connecter pour voter !";
+                                break;
                         }
-
+                    }
                     ?>
+                </p>
+                <input class="form-info" type="text" name="last_name" placeholder="Votre nom">
+                <input class="form-info" type="text" name="name" placeholder="Votre prénom">
+                <div>
+                    <button type="submit" class="btn" id="contest-form-valid">Valider</button>
                 </div>
-            </div>
+            </form>
+        </div>
+        <div class="row" id="hashtags">
+            <p>#LyonIs<span>Wild</span></p>
         </div>
     </div>
+</div>
+
 </body>
 </html>
-
