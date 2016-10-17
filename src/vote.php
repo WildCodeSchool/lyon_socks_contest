@@ -54,7 +54,7 @@ $id = $_SESSION['id'];
                     $sql= "select * from guests where id != $id ";
                     $query = executeSql(getConnection(),$sql);
                     while ($row = $query->fetch_assoc()) {
-                        echo "<div class='col-xs-offset-1 col-xs-10 col-md-offset-1 col-md-2 imgsocks'><img alt=\"" .$row['id']. "\" class=\"lazy media-object padding2\" data-original=\"" .$row['picture_url']. "\"><a data-toggle=\"modal\" data-target=\"#exampleModal\" data-whatever=\"@getbootstrap\" class=\"twitter-button\" >Tweet</a></div>";
+                        echo "<div class='col-xs-offset-1 col-xs-10 col-md-offset-1 col-md-2 imgsocks'><img alt=\"" .$row['id']. "\" class=\"lazy media-object padding2\" data-original=\"" .$row['picture_url']. "\"><a data-toggle=\"modal\" data-target=\"#exampleModal\" data-whatever=\"@getbootstrap\" class=\"twitter-button\" >Tweeter la photo</a></div>";
                     } ?>
     </div>
 </div>
