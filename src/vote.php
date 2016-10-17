@@ -1,12 +1,8 @@
 <?php
 session_start();
-
-/*if (!isset($_SESSION['id'])) {
+if (!isset($_SESSION['id'])) {
     header('Location:../public/login.php?error=4');
-}*/
-
-var_dump($_SESSION);
-
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,11 +31,10 @@ var_dump($_SESSION);
 <div class="container-fluid">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="row">
-            <div class="col-xs-offset-2 col-xs-6">
-                <h2><?php var_dump($_SESSION);
-                    ?>Participez au concours des plus belles chaussettes !</h2>
+            <div class="col-xs-offset-1 col-xs-7">
+                <h2>Participez au concours des plus belles chaussettes !</h2>
                 <h3>Votez pour vos 3 paires de chaussettes préférées.</h3>
-                <h3>Vous avez votez pour <strong id="vote-number">0</strong> paires.</h3>
+                <h3>Vote : <strong id="vote-number">0</strong></h3>
             </div>
             <div class="col-xs-3">
                 <form method="post" action="addvote.php?id=<?php echo $_SESSION['id']; ?>">
@@ -65,7 +60,7 @@ $id = $_SESSION['id'];
                     $query = executeSql(getConnection(),$sql);
                     while ($row = $query->fetch_assoc()) {
 
-                        echo "<div class='col-xs-offset-1 col-xs-10 col-md-offset-1 col-md-2 imgsocks'><img alt=\"" .$row['id']. "\" class=\"lazy media-object padding2\" data-original=\"" .$row['picture_url']. "\"><a data-toggle=\"modal\" data-target=\"#exampleModal\" data-whatever=\"@getbootstrap\" class=\"twitter-hashtag-button\" >Tweet</a></div>";
+                        echo "<div class='col-xs-offset-1 col-xs-10 col-md-offset-1 col-md-2 imgsocks'><img alt=\"" .$row['id']. "\" class=\"lazy media-object padding2\" data-original=\"" .$row['picture_url']. "\"><a data-toggle=\"modal\" data-target=\"#exampleModal\" data-whatever=\"@getbootstrap\" class=\"twitter-button\" >Tweet</a></div>";
                     } ?>
 
 
