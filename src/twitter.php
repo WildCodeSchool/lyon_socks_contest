@@ -28,7 +28,6 @@ if (!isset($_SESSION['access_token'])) {
     $user = $connection->get("account/verify_credentials");
     $msg = $_SESSION['msg'];
     $img = $_SESSION['img'];
-
     $tweetPic = $connection->upload('media/upload', ['media' =>  $img ]);
     $tweet = $connection->post('statuses/update' , ['media_ids' => $tweetPic->media_id, 'status' => $msg ]);
     unset($_SESSION['access_token']);

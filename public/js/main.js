@@ -63,7 +63,7 @@ $(function() {
         }
     }
 
-    $(".twitter-hashtag-button").click(function() {
+    $(".twitter-button").click(function() {
         $("#img-tweet").attr("value",  $(this).prev().attr("data-original"));
     });
 });
