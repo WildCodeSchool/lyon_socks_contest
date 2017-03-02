@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once "bdd.php";
-
 $last_name = htmlspecialchars(trim(strtolower($_POST['last_name'])));
 $name = htmlspecialchars(trim(strtolower($_POST['name'])));
 

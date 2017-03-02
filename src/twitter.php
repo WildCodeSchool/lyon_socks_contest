@@ -31,6 +31,8 @@ if (!isset($_SESSION['access_token'])) {
     $tweetPic = $connection->upload('media/upload', ['media' =>  $img ]);
     $tweet = $connection->post('statuses/update' , ['media_ids' => $tweetPic->media_id, 'status' => $msg ]);
     unset($_SESSION['access_token']);
+   // unset($url);
+    unset($user);
     header('Location:vote.php');
 
 }
