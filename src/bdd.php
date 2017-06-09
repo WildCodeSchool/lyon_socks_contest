@@ -7,7 +7,7 @@
 function getConnection()
 {
     $user = "root";
-    $password = "root";
+    $password = "azerty1234";
     $host = "localhost";
     $db = "socketparty";
 

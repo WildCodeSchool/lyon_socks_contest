@@ -14,6 +14,9 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+CREATE DATABASE IF NOT EXISTS socketparty;
+USE socketparty;
+
 --
 -- Table structure for table `guests`
 --
@@ -25,6 +28,8 @@ CREATE TABLE `guests` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(30) DEFAULT NULL,
   `last_name` varchar(30) DEFAULT NULL,
+  `twitter` varchar(30) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
   `picture_url` varchar(250) DEFAULT NULL,
   `vote` tinyint(1) NOT NULL DEFAULT '0',
   `likes` int(11) NOT NULL DEFAULT '0',
@@ -38,7 +43,7 @@ CREATE TABLE `guests` (
 
 LOCK TABLES `guests` WRITE;
 /*!40000 ALTER TABLE `guests` DISABLE KEYS */;
-INSERT INTO `guests` VALUES (1,'aymen','mechiche','imgsocks/aymenmechiche.jpeg',1,2),(2,'alexandre','fradet','imgsocks/alexandrefradet.jpeg',0,0),(4,'david','ducruet','imgsocks/davidducruet.jpeg',1,3),(11,'nicolas','gomez','imgsocks/nicolasgomez.jpeg',0,1),(12,'laurie','gaudon','imgsocks/lauriegaudon.jpeg',1,2),(13,'florent','dabain','imgsocks/florentdabain.jpeg',0,0),(14,'cedric','gamrat','imgsocks/cedricgamrat.jpeg',0,0),(15,'damien','beauseigneur','imgsocks/damienbeauseigneur.jpeg',0,0),(16,'adam','benyahia','imgsocks/adambenyahia.jpeg',0,0),(17,'yoan','gloaguen','imgsocks/yoangloaguen.jpeg',0,1),(18,'yann','chanteloup','imgsocks/yannchanteloup.jpeg',0,1),(19,'kevin','dark','imgsocks/kevindark.jpeg',0,2),(20,'christian','jecko','imgsocks/christianjecko.jpeg',0,1),(21,'cecile','angays','imgsocks/cecileangays.jpeg',1,1),(24,'test','wcs','imgsocks/testwcs.jpeg',1,2),(26,'yousri','bay','imgsocks/yousribay.jpeg',1,2),(29,'sue','mech','imgsocks/suemech.jpeg',0,1),(33,'test','zak','imgsocks/testzak.jpeg',0,0);
+INSERT INTO `guests` VALUES (1,'aymen','mechiche','','','imgsocks/aymenmechiche.jpeg',1,2),(2,'alexandre','fradet','','','imgsocks/alexandrefradet.jpeg',0,0),(4,'david','ducruet','','','imgsocks/davidducruet.jpeg',1,3),(11,'nicolas','gomez','','','imgsocks/nicolasgomez.jpeg',0,1),(12,'laurie','gaudon','','','imgsocks/lauriegaudon.jpeg',1,2),(13,'florent','dabain','','','imgsocks/florentdabain.jpeg',0,0),(14,'cedric','gamrat','','','imgsocks/cedricgamrat.jpeg',0,0),(15,'damien','beauseigneur','','','imgsocks/damienbeauseigneur.jpeg',0,0),(16,'adam','benyahia','','','imgsocks/adambenyahia.jpeg',0,0),(17,'yoan','gloaguen','','','imgsocks/yoangloaguen.jpeg',0,1),(18,'yann','chanteloup','','','imgsocks/yannchanteloup.jpeg',0,1),(19,'kevin','dark','','','imgsocks/kevindark.jpeg',0,2),(20,'christian','jecko','','','imgsocks/christianjecko.jpeg',0,1),(21,'cecile','angays','','','imgsocks/cecileangays.jpeg',1,1),(24,'test','wcs','','','imgsocks/testwcs.jpeg',1,2),(26,'yousri','bay','','','imgsocks/yousribay.jpeg',1,2),(29,'sue','mech','','','imgsocks/suemech.jpeg',0,1),(33,'test','zak','','','imgsocks/testzak.jpeg',0,0);
 /*!40000 ALTER TABLE `guests` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
