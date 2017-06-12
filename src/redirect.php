@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="row" id="hashtags">
-            <p>#LyonIs<span>Wild</span></p>
+            <p><span>#WildCodeSchool</span></p>
         </div>
     </div>
     </body>

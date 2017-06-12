@@ -33,17 +33,15 @@
     <div class="row">
         <div class="col-xs-10 col-xs-offset-1 home">
             <form method="post" action="../src/recording.php" enctype="multipart/form-data">
+                <input class="form-info" type="text" name="name" placeholder="Votre prénom" style="margin-top: 5px;">
                 <input class="form-info" type="text" name="last_name" placeholder="Votre nom">
-                <input class="form-info" type="text" name="name" placeholder="Votre prénom">
-                <input class="form-info"  type="text" name="twitter" placeholder="Votre compte Twitter">
+                <input class="form-info"  type="text" name="email" placeholder="Votre email">
 
                 <div>
                     <label for="Input" id="sock-upload">Envoyez la photo de vos chaussettes</label>
                     <input type="file"  accept="image/*" class="form-input-text" name="picture" capture="camera" id="upload">
                 </div>
-                <div>
-                    <button type="submit" class="btn" id="contest-form-valid">Valider</button>
-                </div>
+                <button type="submit" class="btn" id="contest-form-valid" style="margin-top: 15px;">Valider</button>
             </form>
             <?php if (isset($_GET['error'])) {
                 if ($_GET['error'] = 1){ echo "Il y a eu une erreur, réessayez."; }
@@ -51,8 +49,12 @@
         </div>
     </div>
 
+    <div class="row">
+        <a class="btn btn-default" href="login.php" role="button" style="width: 100%;">Voter</a>
+    </div>
+
     <div class="row" id="hashtags">
-        <p>#LyonIs<span>Wild</span></p>
+        <p><span>#WildCodeSchool</span></p>
     </div>
 </div>
 </body>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'bdd.php';
 require "../vendor/autoload.php";
 use Gregwar\Image\Image;
@@ -8,27 +9,38 @@ if ( (isset($_POST["last_name"])) && (isset($_POST['name'])) && (isset($_FILES['
     $extension = $extension_upload[1];
     $last_name = htmlspecialchars(trim(strtolower($_POST["last_name"])));
     $name = htmlspecialchars(trim(strtolower($_POST["name"])));
-    $twitter = htmlspecialchars(trim(strtolower($_POST["twitter"])));
+    $email = htmlspecialchars(trim(strtolower($_POST["email"])));
 
 
-    if ((empty($last_name) === false) || (empty($name) === false)) {
-        $name_picture = md5($name.$last_name) . "." . $extension;
-        $url = "imgsocks/" . $name_picture;
-        Image::open($_FILES['picture']['tmp_name'])
-            ->cropResize(500, 500)
-            ->save($url);
+    if (isset($last_name) && isset($name)) {
+        $md5 = md5($name.$last_name);
+        $rawUrl = "imgsocks/" . $md5 . "_raw" . "." . $extension;
+        $url = "imgsocks/" . $md5 . "." . $extension;
+        if (move_uploaded_file($_FILES['picture']['tmp_name'], $rawUrl)) {
+            Image::open($rawUrl)
+                ->cropResize(500, 500)
+                ->save($url);
 
-        $sql = "INSERT INTO guests (first_name, last_name, picture_url, twitter) VALUES ('$name', '$last_name', '$url', '$twitter')";
-        $exec = executeSql(getConnection(), $sql);
-        header("Location:redirection.php");
+            $sql = "INSERT INTO guests (first_name, last_name, picture_url, email) VALUES ('$name', '$last_name', '$url', '$email')";
+            $exec = executeSql(getConnection(), $sql);
+            sleep(1);
+            $id = getId($name, $last_name);
+            $_SESSION['id'] = $id;
+            header('Location:vote.php');
+        } else {
+            session_destroy();
+            header("Location:../public/index.php?error=14");
+        }
 
     } else {
+        session_destroy();
         header("Location:../public/index.php?error=13");
     }
 }
-      else {
-        header("Location:../public/index.php?error=12");
-      }
+else {
+    session_destroy();
+    header("Location:../public/index.php?error=12");
+}
 
 
 

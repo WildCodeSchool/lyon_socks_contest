@@ -17,7 +17,7 @@ label {
 .index {
     background-image: url(../img/chaussettes-inauguration.jpg);
     background-repeat: no-repeat;
-    background-size: 117%;
+    background-size: cover;
 }
 
 .home {
@@ -25,7 +25,8 @@ label {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 40px;
-    padding: 50px 0;
+    padding: 45px 0;
+    margin-bottom: 50px;
 
 }
 #contest-form {
@@ -35,6 +36,7 @@ label {
 #contest-form h1{
     color: #ffffff;
     margin-bottom: 50px;
+    text-shadow: 2px 2px #aaa;
 }
 
 #logo-wcs {
@@ -141,4 +143,8 @@ label {
 #contest-form-valid-red:hover {
     font-weight: 700;
     background-color: #FF7D00;
+}
+
+img.winner {
+    max-width: 100%;
 }

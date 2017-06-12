@@ -32,8 +32,8 @@ if (session_status() === 2){
 <body class="index">
 <div class="container" id="contest-form">
     <div class="row">
-        <img src="../public/img/wcs-logo1.png" alt="Logo de l'école de développement web Wild Code School" id="logo-wcs"/>
-        <h1><strong>Votez pour les plus belles chaussettes!</strong></h1>
+        <img src="../public/img/wcs-logo1.png" alt="Logo de l'école de développement web Wild Code School" id="logo-wcs" style="width: 100px; margin-top: -65px;"/>
+        <h1 style="font-size: 25px; margin-top: -10px;"><strong>Votez pour les plus belles chaussettes!</strong></h1>
     </div>
     <div class="row">
         <div class="col-xs-10 col-xs-offset-1 home">
@@ -58,15 +58,18 @@ if (session_status() === 2){
                     }
                     ?>
                 </p>
+                <input class="form-info" type="text" name="name" placeholder="Votre prénom"style="margin-top: 5px;">
                 <input class="form-info" type="text" name="last_name" placeholder="Votre nom">
-                <input class="form-info" type="text" name="name" placeholder="Votre prénom">
                 <div>
                     <button type="submit" class="btn" id="contest-form-valid">Valider</button>
                 </div>
             </form>
         </div>
+        <div class="row">
+            <a class="btn btn-default" href="index.php" role="button" style="width: 100%;">Participer</a>
+        </div>
         <div class="row" id="hashtags">
-            <p>#LyonIs<span>Wild</span></p>
+            <p><span>#WildCodeSchool</span></p>
         </div>
     </div>
 </div>

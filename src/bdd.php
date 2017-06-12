@@ -30,6 +30,23 @@ function executeSql($mysqli, $sql) {
     return $result;
 }
 
+/**
+ * get latest id in table
+ */
+function getLatestId() {
+    return getConnection()->insert_id;
+}
+
+/**
+ * get id from full name
+ */
+function getId($firstName, $lastName) {
+    $sql = "SELECT id FROM guests where last_name = '$lastName' AND first_name = '$firstName'";
+    $query = executeSql(getConnection(),$sql);
+    $row = $query->fetch_assoc();
+    return $row['id'];
+}
+
 
 
 

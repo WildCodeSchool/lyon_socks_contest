@@ -18,6 +18,7 @@ Cloner le dépot, télécharger les dépendances et créer la BDD
     cd chaussettes
     composer install
     mysql -u root -p < mysqlconfig.txt
+    chown www-data src/imgsocks
 
 Configurer la BDD : Edition du fichier src/bdd.php
     

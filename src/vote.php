@@ -1,6 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['id'])) {
+    session_destroy();
     header('Location:../public/login.php?error=4');
 }
 ?>
@@ -23,16 +24,16 @@ if (!isset($_SESSION['id'])) {
     </script>
     <link rel="stylesheet" href="../public/css/vote.css">
 </head>
+
 <body>
 <div class="container-fluid" id="choice-counter">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="row">
-            <div class="col-xs-1 col-xs-offset-1">
+            <div class="col-xs-2">
                 <img src="../public/img/wcs-logo-svg.svg" alt="Logo de la Wild Code School">
             </div>
             <div class="col-xs-6">
                 <h2>Participez au concours des plus belles chaussettes !</h2>
-                <h3>Votez pour vos 3 paires de chaussettes préférées.</h3>
             </div>
             <div class="col-xs-3">
                 <form method="post" action="addvote.php?id=<?php echo $_SESSION['id']; ?>">
@@ -44,57 +45,59 @@ if (!isset($_SESSION['id'])) {
                 <p>Vote : <strong id="vote-number">0</strong></p>
             </div>
         </div>
-    </div>
-</div>
-<div class="container-fluid">
-    <div class="row imgsockss">
-<?php
-    require_once "bdd.php";
-$id = $_SESSION['id'];
-                    $sql= "select * from guests where id != $id ";
-                    $query = executeSql(getConnection(),$sql);
-                    while ($row = $query->fetch_assoc()) {
-                        echo "<div class='col-xs-offset-1 col-xs-10 col-md-offset-1 col-md-2 imgsocks'><img alt=\"" .$row['id']. "\" class=\"lazy media-object padding2\" data-original=\"" .$row['picture_url']. "\"><a data-toggle=\"modal\" data-target=\"#exampleModal\" data-whatever=\"@getbootstrap\" class=\"twitter-button\" >Tweeter la photo</a></div>";
-                    } ?>
-    </div>
-</div>
-<div class="bd-example">
-    <a data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Tweet</a>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form method="post" action="twitter.php" >
-                        <div class="form-group">
-                            <input id="img-tweet" type="hidden" name="img-tweet" value="">
-                            <label for="recipient-name" class="form-control-label">Votre Tweet :</label>
-                            <input type="text-area" class="form-control" id="recipient-name" name="msg-tweet"
-                                   value="#LyonIsWild .. j'ai voté pour cette magnifique paire de chaussette.">
-                            </br>
-                            <input type="submit" class="btn btn-primary" value="Tweeter">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                </div>
+        <div class="row">
+            <div class="col-xs-12 col-xs-offset-1">
+                <h3>Votez pour vos 3 paires de chaussettes préférées.</h3>
             </div>
         </div>
     </div>
 </div>
-<!--<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>-->
-<script>
-    $(function() {
-        $("img.lazy").lazyload({
-            effect : "slideDown"
-        });
-    });
-</script>
+<div class="container-fluid" style="margin-top: 236px;">
+    <div class="row imgsockss">
+        <?php
+        require_once "bdd.php";
+        $id = $_SESSION['id'];
+        $sql= "select * from guests where id != $id ";
+        $query = executeSql(getConnection(),$sql);
+        while ($row = $query->fetch_assoc()) {
+            echo
+                "<div class='col-xs-offset-1 col-xs-10 col-md-offset-1 col-md-2 imgsocks'>".
+                "   <img alt=\"" .$row['id']. "\" class=\"media-object padding2\" src=\"" .$row['picture_url']. "\">".
+                /*"   <a data-toggle=\"modal\" data-target=\"#exampleModal\" data-whatever=\"@getbootstrap\" class=\"twitter-button\" >Tweeter la photo</a>".*/
+                "</div>";
+        } ?>
+    </div>
+    <div class="row">
+        <a class="btn btn-danger" href="../public/login.php" role="button" style="width: 100%;">Annuler</a>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="twitter.php" >
+                    <div class="form-group">
+                        <input id="img-tweet" type="hidden" name="img-tweet" value="">
+                        <label for="recipient-name" class="form-control-label">Votre Tweet :</label>
+                        <input type="text-area" class="form-control" id="recipient-name" name="msg-tweet"
+                               value="#LyonIsWild .. j'ai voté pour cette magnifique paire de chaussette.">
+                        </br>
+                        <input type="submit" class="btn btn-primary" value="Tweeter">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
 

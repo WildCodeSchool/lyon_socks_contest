@@ -1,13 +1,10 @@
-<?php
-?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>WCS Chaussettes</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=0.7">
-
+    <title>Election des meilleures chaussettes</title>
+    <meta charset="utf-8" lang="fr">
 
     <!--  JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -21,17 +18,18 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/guests.css">
 </head>
-<body class="index">
-<div class="container home" style="margin-top: 50px;">
+
+<body>
+<div class="container-fluid">
+
     <div class="row">
-        <img src="../public/img/wcs-logo1.png" alt="Logo Wild Code School" id="logo-wcs" style="margin-top: -75px;"/>
-        <h1><strong>Les plus belles chaussettes !</strong></h1>
+        <h1>Les plus belles chaussettes !</h1>
     </div>
 
     <div class="row">
+
         <?php
         require_once '../src/bdd.php';
         $sql = "select * from guests order by likes DESC limit 3";
@@ -73,10 +71,10 @@
             </p>
         </div>
     </div>
-
-    <div class="row" id="hashtags">
-        <p><span>#WildCodeSchool</span></p>
-    </div>
 </div>
+
 </body>
+
 </html>
+
+
