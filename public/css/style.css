@@ -125,10 +125,7 @@ label {
     width: 150px;
     display: inline-block;
 }
-.name {
-    font-size: 3em;
-    color: #539a93;
-}
+
 
 
 /*redicretion*/
@@ -147,4 +144,10 @@ label {
 
 img.winner {
     max-width: 100%;
+}
+
+span.name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

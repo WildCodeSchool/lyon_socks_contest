@@ -25,21 +25,20 @@
 
 </head>
 <body class="index">
-<div class="container home" style="margin-top: 50px;">
+<div class="container home" style="margin-top: 50px; padding: 45px 20px;">
     <div class="row">
-        <img src="../public/img/wcs-logo1.png" alt="Logo Wild Code School" id="logo-wcs" style="margin-top: -75px;"/>
         <h1><strong>Les plus belles chaussettes !</strong></h1>
     </div>
 
     <div class="row">
         <?php
         require_once '../src/bdd.php';
-        $sql = "select * from guests order by likes DESC limit 3";
+        $sql = "select * from guests order by RAND() DESC limit 12";
         $req = executeSql(getConnection(),$sql);
         while ($row = $req->fetch_assoc()) {
             echo
-                "<div class='col-md-4'>".
-                $row['first_name']. " " .$row['last_name'].
+                "<div class='col-md-2' style='margin-top: 20px;'>".
+                "<span class='name'>" . $row['first_name']. " " .$row['last_name']. "</span>".
                 /*" </br> Twitter :".$row['twitter'].*/
                 "   </br>" .$row['likes'].
                 "   </br><img class='winner' src='../src/" .$row['picture_url']. "'/>".
@@ -49,7 +48,7 @@
         ?>
     </div>
 
-    <div class="row">
+    <div class="row" style="margin-top: 30px;">
         <div class="col-xs-offset-1 col-xs-3">
             <p>Nombre de participants :
                 <?php
@@ -78,5 +77,11 @@
         <p><span>#WildCodeSchool</span></p>
     </div>
 </div>
+
+<script type="text/javascript">
+    setTimeout(" window.location.reload(true);", 30*1000);
+
+</script>
+
 </body>
 </html>

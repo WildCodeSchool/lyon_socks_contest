@@ -14,10 +14,12 @@ Some rules for this :
 
 Cloner le dépot, télécharger les dépendances et créer la BDD
 
-    git clone git@github.com:WildCodeSchool/lyon_socks_contest.git chaussettes
+    cd /var/www/html
+    git clone https://github.com/WildCodeSchool/lyon_socks_contest.git chaussettes
     cd chaussettes
     composer install
     mysql -u root -p < mysqlconfig.txt
+    mkdir src/imgsocks
     chown www-data src/imgsocks
 
 Configurer la BDD : Edition du fichier src/bdd.php

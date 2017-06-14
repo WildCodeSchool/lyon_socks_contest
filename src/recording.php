@@ -23,10 +23,7 @@ if ( (isset($_POST["last_name"])) && (isset($_POST['name'])) && (isset($_FILES['
 
             $sql = "INSERT INTO guests (first_name, last_name, picture_url, email) VALUES ('$name', '$last_name', '$url', '$email')";
             $exec = executeSql(getConnection(), $sql);
-            sleep(1);
-            $id = getId($name, $last_name);
-            $_SESSION['id'] = $id;
-            header('Location:vote.php');
+            header("Location:redirection.php");
         } else {
             session_destroy();
             header("Location:../public/index.php?error=14");

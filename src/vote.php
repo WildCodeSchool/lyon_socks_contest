@@ -61,8 +61,8 @@ if (!isset($_SESSION['id'])) {
         $query = executeSql(getConnection(),$sql);
         while ($row = $query->fetch_assoc()) {
             echo
-                "<div class='col-xs-offset-1 col-xs-10 col-md-offset-1 col-md-2 imgsocks'>".
-                "   <img alt=\"" .$row['id']. "\" class=\"media-object padding2\" src=\"" .$row['picture_url']. "\">".
+                "<div class='col-md-2 imgsocks'>".
+                "   <img alt=\"" .$row['id']. "\" class=\"media-object padding2\" src=\"" .$row['picture_url']. "\" style='max-width: 100%;'>".
                 /*"   <a data-toggle=\"modal\" data-target=\"#exampleModal\" data-whatever=\"@getbootstrap\" class=\"twitter-button\" >Tweeter la photo</a>".*/
                 "</div>";
         } ?>
