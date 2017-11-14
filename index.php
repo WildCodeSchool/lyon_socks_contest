@@ -27,12 +27,12 @@
 <body class="index">
 <div class="container" id="contest-form">
     <div class="row">
-        <img src="../public/img/wcs-logo1.png" alt="Logo de l'école de développement web Wild Code School" id="logo-wcs"/>
+        <img src="img/wcs-logo1.png" alt="Logo de l'école de développement web Wild Code School" id="logo-wcs"/>
         <h1><strong>Participez au concours des plus belles chaussettes!</strong></h1>
     </div>
     <div class="row">
         <div class="col-xs-10 col-xs-offset-1 home">
-            <form method="post" action="../src/recording.php" enctype="multipart/form-data">
+            <form method="post" action="src/recording.php" enctype="multipart/form-data">
                 <input class="form-info" type="text" name="name" placeholder="Votre prénom" style="margin-top: 5px;">
                 <input class="form-info" type="text" name="last_name" placeholder="Votre nom">
                 <input class="form-info"  type="text" name="email" placeholder="Votre email">

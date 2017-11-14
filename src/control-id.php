@@ -6,7 +6,7 @@ $name = htmlspecialchars(trim(strtolower($_POST['name'])));
 
 if ( (empty($last_name) === true) || (empty($name) === true)){
     session_destroy();
-    header('Location:../public/login.php?error=2');
+    header('Location:../login.php?error=2');
 }
 
 $sql = "SELECT COUNT(*) as user_exist FROM guests where last_name = '$last_name' AND first_name = '$name'";
@@ -23,12 +23,12 @@ while ($row = $query->fetch_assoc()) {
                 }
             } elseif ($row['vote'] == 1) {
                 session_destroy();
-                header('Location:../public/login.php?error=3');
+                header('Location:../login.php?error=3');
             }
         }
     }
     else {
         session_destroy();
-        header('Location:../public/login.php?error=1');
+        header('Location:../login.php?error=1');
     }
 }

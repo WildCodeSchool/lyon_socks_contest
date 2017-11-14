@@ -19,10 +19,10 @@ if (!isset($_SESSION['id'])) {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="../public/js/lazyload.js"></script>
-    <script src="../public/js/main.js" type="text/javascript">
+    <script src="../js/lazyload.js"></script>
+    <script src="../js/main.js" type="text/javascript">
     </script>
-    <link rel="stylesheet" href="../public/css/vote.css">
+    <link rel="stylesheet" href="../css/vote.css">
 </head>
 
 <body>
@@ -30,7 +30,7 @@ if (!isset($_SESSION['id'])) {
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="row">
             <div class="col-xs-2">
-                <img src="../public/img/wcs-logo-svg.svg" alt="Logo de la Wild Code School">
+                <img src="../img/wcs-logo-svg.svg" alt="Logo de la Wild Code School">
             </div>
             <div class="col-xs-6">
                 <h2>Participez au concours des plus belles chaussettes !</h2>
@@ -68,7 +68,7 @@ if (!isset($_SESSION['id'])) {
         } ?>
     </div>
     <div class="row">
-        <a class="btn btn-danger" href="../public/login.php" role="button" style="width: 100%;">Annuler</a>
+        <a class="btn btn-danger" href="../login.php" role="button" style="width: 100%;">Annuler</a>
     </div>
 </div>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

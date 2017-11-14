@@ -26,17 +26,17 @@ if ( (isset($_POST["last_name"])) && (isset($_POST['name'])) && (isset($_FILES['
             header("Location:redirection.php");
         } else {
             session_destroy();
-            header("Location:../public/index.php?error=14");
+            header("Location:../index.php?error=14");
         }
 
     } else {
         session_destroy();
-        header("Location:../public/index.php?error=13");
+        header("Location:../index.php?error=13");
     }
 }
 else {
     session_destroy();
-    header("Location:../public/index.php?error=12");
+    header("Location:../index.php?error=12");
 }
 
 

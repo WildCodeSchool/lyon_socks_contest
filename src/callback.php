@@ -17,5 +17,5 @@ if (isset($_REQUEST['oauth_verifier'], $_REQUEST['oauth_token']) && $_REQUEST['o
 
     $_SESSION['access_token'] = $access_token;
 
-    header('Location:../src/twitter.php');
+    header('Location:twitter.php');
 }
