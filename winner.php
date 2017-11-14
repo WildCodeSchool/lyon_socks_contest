@@ -33,7 +33,7 @@
     <div class="row">
         <?php
         require_once 'src/bdd.php';
-        $sql = "select * from guests order by RAND() DESC limit 12";
+        $sql = "select * from guests order by RAND() DESC limit 30";
         $req = executeSql(getConnection(),$sql);
         while ($row = $req->fetch_assoc()) {
             echo

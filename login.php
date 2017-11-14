@@ -32,12 +32,12 @@ if (session_status() === 2){
 <body class="index">
 <div class="container" id="contest-form">
     <div class="row">
-        <img src="../public/img/wcs-logo1.png" alt="Logo de l'école de développement web Wild Code School" id="logo-wcs" style="width: 100px; margin-top: -65px;"/>
+        <img src="img/wcs-logo1.png" alt="Logo de l'école de développement web Wild Code School" id="logo-wcs" style="width: 100px; margin-top: -65px;"/>
         <h1 style="font-size: 25px; margin-top: -10px;"><strong>Votez pour les plus belles chaussettes!</strong></h1>
     </div>
     <div class="row">
         <div class="col-xs-10 col-xs-offset-1 home">
-            <form method="post" action="../src/control-id.php">
+            <form method="post" action="src/control-id.php">
                 <p class="error">
                     <?php
                     if(isset($_GET['error'])) {
